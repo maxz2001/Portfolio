@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Max's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#changingHeadingContainer {
+			  height: 100px; /* Set a fixed height */
+			  overflow: hidden; /* Hide overflow content */
+			}
+		  </style>
+		<script>
+			const texts = [
+			  "Greetings",
+			  "Здравствуйте",
+			  "Grüße",
+			  "問候",
+			  "Saludos",
+			  "ברכות",
+			  "अभिवादन",
+			  "Salutations",
+			  "인사말",
+			  "Saudações",
+			  "Saluti",
+			  "Lời chào hỏi",
+			  "вітаю",
+			  "ご挨拶",
+			  "تحيات",
+			  "Χαιρετίσματα",
+			  "ทักทาย",
+			  "Groeten",
+			  "Pagbati",
+			  "Terveisiä",
+			  "Hälsningar",
+			  "Salvete",
+			  "Beannachtaí"
+			  // Add more headings as needed
+			];
+		  
+			let currentIndex = 0;
+			let charIndex = 0;
+			let removeMode = false;
+		  
+			function updateHeading() {
+			  const element = document.getElementById("changingHeading");
+			  const currentText = texts[currentIndex];
+		  
+			  if (!removeMode && charIndex < currentText.length) {
+				// Typing mode
+				element.textContent += currentText.charAt(charIndex);
+				charIndex++;
+			  } else if (!removeMode && charIndex === currentText.length) {
+				// Pause after typing
+				setTimeout(() => {
+				  removeMode = true;
+				  charIndex = currentText.length; // Start removing from the end
+				}, 1000); // Adjust the pause duration in milliseconds (1 second in this example)
+			  } else if (removeMode && charIndex >= 0) {
+				// Removing mode
+				element.textContent = currentText.substring(0, charIndex);
+				charIndex--;
+			  } else {
+				// Switch to the next text and reset variables
+				currentIndex = (currentIndex + 1) % texts.length;
+				removeMode = false;
+				charIndex = 0;
+			  }
+			}
+		  
+			setInterval(updateHeading, 100); // Adjust the interval for typing speed
+		  </script>
+		  	  
+		  
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Projects</a></li>
+							<li><a href="#two">About Me</a></li>
+							<li><a href="#three">Get in touch</a></li>
+							<li><a href="blog.html">Blog</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+				<section id="intro" class="wrapper style1 fullscreen fade-up">
+					<div class="inner">
+						<div id="changingHeadingContainer">
+							<h1 id="changingHeading"></h1>
+						</div>
+						<div style="display: flex; align-items: center;">
+							<p>
+								<b>Welcome to Max's corner of the internet!</b><br />
+								Check out my work, or learn more about me.
+							</p>
+							<img src="images/profimage.jpg" alt="Max's Image" style="border-radius: 50%; width: 200px; height: 200px; margin-left: 180px;">
+						</div>
+						<ul class="actions">
+							<li><a href="#one" class="button scrolly">Let's Go</a></li>
+						</ul>
+					</div>
+				</section>
+
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a class="image"><img src="images/projectimage1.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Python</h2>
+									<p>Programs written in Python</p>
+									<ul class="actions">
+										<li><a href="pythonproj.html" class="button">See More</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image"><img src="images/projectimage2.jpg" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>AI Projects</h2>
+									<p>Generative modeling and training with datasets</p>
+									<ul class="actions">
+										<li><a href="aiproj.html" class="button">See more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a class="image"><img src="images/projectimage3.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Games</h2>
+									<p>Created with Unity and C# scripts</p>
+									<ul class="actions">
+										<li><a href="gameproj.html" class="button">See more</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>About Max</h2>
+							<p>My name is Max Zlochevsky, I am a San Jose State University student who has always been deeply passionate about technology and the way it revolutionizes the world. My sparking curiosity has led to me creating many different programming projects, websites, art, and anything else that interests me! Here are some of my skills and hobbies:</p>
+							<div class="features">
+								<section>
+									<span class="icon solid major fa-code"></span>
+									<h3>Coding</h3>
+									<p>I enjoy learning and programming in various languages. Here are some of my favorites:<br>Python • Java • HTML • C++ • SQL</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Hardware</h3>
+									<p>My interest in gaming has led to me assembling many different gaming desktops, allowing me to get experience with computer hardware.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-running"></span>
+									<h3>Sports</h3>
+									<p>Playing sports has always been a lifetime hobby of mine, and I enjoy exercising often. My favorite sport to watch and play is Hockey.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-palette"></span>
+									<h3>Design</h3>
+									<p>Creating designs and being able to unleash creativity has always been a part of me. I like to express creativity through art, video editing, photography, and programming.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-pen"></span>
+									<h3>Writing</h3>
+									<p>I like sharing my insights about various subjects and blogging about anything that captures my interest, especially about new technologies. Creative writing further allows me to unleash my imagination.</p>
+								</section>
+								<section>
+									<span class="icon major fa-sun"></span>
+									<h3>Traveling</h3>
+									<p>Traveling around the world always provides me with life-changing experiences. I love learning about foreign cultures and exploring history.</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="blog.html" class="button">My Blog</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>Feel free to reach out with any inquiries or to chat! I am always open to new opportunities and conenctions.</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="" class="button submit" onclick="sendEmail()">Send Message</a></li>
+										</ul>
+									</form>
+									<script>
+										function sendEmail() {
+											// Get the content of the email input and message textarea
+											var recipientEmail = document.getElementById('email').value;
+											var emailContent = document.getElementById('message').value;
+								
+											// Encode the email content for inclusion in the mailto link
+											var encodedContent = encodeURIComponent(emailContent);
+								
+											// Create the mailto link with the pre-filled body and recipient email
+											var mailtoLink = 'mailto:' + recipientEmail + '?subject=Your%20Subject&body=' + encodedContent;
+								
+											// Open the user's email client
+											window.location.href = mailtoLink;
+										}
+									</script>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Email</h3>
+											<span>zmaxik2001@gmail.com</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="https://github.com/maxz2001" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="https://www.linkedin.com/in/maxzlochevsky/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Max Zlochevsky, 2023. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
